@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<fieldset class="admin__fieldset payment-method" id="payment_form_<?php echo $block->getMethodCode() ?>" style="display: none">
+    <div class="admin__field _required">
+        <label for="cc_name" class="admin__field-label"><span><?php echo __('Name on Credit Card') ?></span></label>
+        <div class="admin__field-control">
+            <input type="text" id="cc_name" name="payment[cc_name]"
+                   title="<?php echo __("Name on Credit Card") ?>" class="required-entry admin__control-text"
+                   value="<?php echo $block->getInfoData('cc_name') ?>"/>
+        </div>
+    </div>
+    <div class="admin__field _required">
+        <label for="cc_number" class="admin__field-label"><span><?php echo __('Credit Card Number') ?></span></label>
+        <div class="admin__field-control">
+            <input type="text" id="cc_number" name="payment[cc_number]"
+                   title="<?php echo __("Credit Card Number") ?>" class="required-entry admin__control-text"
+                   value="<?php echo $block->getInfoData('cc_number') ?>"/>
+        </div>
+    </div>
+    <div class="admin__field _required">
+        <label for="cc_expiry" class="admin__field-label"><span><?php echo __('Credit Card Expiry') ?></span></label>
+        <div class="admin__field-control">
+            <input type="text" id="cc_expiry" name="payment[cc_expiry]"
+                   title="<?php echo __("Credit Card Expiry") ?>" class="required-entry admin__control-text"
+                   value="<?php echo $block->getInfoData('cc_expiry') ?>"/>
+        </div>
+    </div><div class="admin__field _required">
+        <label for="cc_cvv" class="admin__field-label"><span><?php echo __('CVV') ?></span></label>
+        <div class="admin__field-control">
+            <input type="text" id="cc_cvv" name="payment[cc_cvv]"
+                   title="<?php echo __("CVV") ?>" class="required-entry admin__control-text"
+                   value="<?php echo $block->getInfoData('cc_cvv') ?>"/>
+        </div>
+    </div>
+</fieldset>

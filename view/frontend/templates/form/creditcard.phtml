@@ -1,0 +1,35 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<fieldset class="fieldset items <?php echo $block->getMethodCode() ?>" id="payment_form_<?php echo $block->getMethodCode() ?>" style="display: none">
+    <div class="field text required">
+        <label for="cc_name" class="label"><span><?php echo __('Name on Credit Card') ?></span></label>
+        <div class="control">
+            <input type="text" id="cc_name" name="payment[cc_name]" title="<?php echo __('Name on Credit Card') ?>" class="input-text required-entry" value="<?php echo $block->escapeHtml($block->getInfoData('cc_name')) ?>" />
+        </div>
+    </div>
+    <div class="field number required">
+        <label for="cc_number" class="label"><span><?php echo __('Credit Card Number') ?></span></label>
+        <div class="control">
+            <input type="text" id="cc_number" name="payment[cc_number]" title="<?php echo __('Credit Card Number') ?>" class="input-text required-entry" value="<?php echo $block->escapeHtml($block->getInfoData('cc_number')) ?>" />
+        </div>
+    </div>
+    <div class="field number required">
+        <label for="cc_exp" class="label"><span><?php echo __('Credit Card Expiry') ?></span></label>
+        <div class="control">
+            <input type="text" id="cc_exp" name="payment[cc_exp]" title="<?php echo __('Credit Card Expiry') ?>" class="input-text required-entry" value="<?php echo $block->escapeHtml($block->getInfoData('cc_exp')) ?>" />
+        </div>
+    </div>
+    <div class="field number required">
+        <label for="cc_cvv" class="label"><span><?php echo __('CVV') ?></span></label>
+        <div class="control">
+            <input type="text" id="cc_cvv" name="payment[cc_cvv]" title="<?php echo __('Credit Card CVV') ?>" class="input-text required-entry" value="<?php echo $block->escapeHtml($block->getInfoData('cc_cvv')) ?>" />
+        </div>
+    </div>
+</fieldset>

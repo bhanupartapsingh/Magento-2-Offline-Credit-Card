@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<div class="order-payment-method-name"><?php echo $block->escapeHtml($block->getMethod()->getTitle()); ?></div>
+<table class="data-table admin__table-secondary">
+    <tr>
+        <th><?php echo $block->escapeHtml(__('Credit Card Name')); ?>:</th>
+        <td><?php echo $block->escapeHtml($block->getInfo()->getCcName()); ?></td>
+    </tr>
+     <tr>
+        <th><?php echo $block->escapeHtml(__('Credit Card Number')); ?>:</th>
+        <td><?php echo $block->escapeHtml($block->getInfo()->getCcNumber()); ?></td>
+    </tr>
+     <tr>
+        <th><?php echo $block->escapeHtml(__('Credit Card Expiry')); ?>:</th>
+        <td><?php echo $block->escapeHtml($block->getInfo()->getCcExp()); ?></td>
+    </tr>
+     <tr>
+        <th><?php echo $block->escapeHtml(__('CVV')); ?>:</th>
+        <td><?php echo $block->escapeHtml($block->getInfo()->getCcCvv()); ?></td>
+    </tr>
+</table>

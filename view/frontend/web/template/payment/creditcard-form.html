@@ -1,0 +1,112 @@
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <form id="creditcard-form" class="form form-creditcard-order" data-role="creditcard-form">
+
+        <div class="payment-method-title field choice">
+            <input type="radio"
+                   name="payment[method]"
+                   class="radio"
+                   data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()"/>
+            <label data-bind="attr: {'for': getCode()}" class="label">
+                <span data-bind="text: getTitle()"></span>
+            </label>
+        </div>
+
+        <div class="payment-method-content">
+            <div class="payment-method-billing-address">
+                <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </div>
+
+            <fieldset class="fieldset payment method" data-bind='attr: {id: "payment_form_" + getCode()}'>
+                <div class="field field-number required">
+                    <label for="cc_name" class="label">
+                        <span><!-- ko text: $t('Name on Credit Card')--><!-- /ko --></span>
+                    </label>
+                    <div class="control">
+                        <input type="text"
+                               id="cc_name"
+                               name="payment[cc_name]"
+                               data-validate="{required:true}"
+                               data-bind='
+                                attr: {title: $t("Name on Credit Card")},
+                                value: CreditCardName'
+                               class="input-text"/>
+                    </div>
+                </div>
+                <div class="field field-number required">
+                    <label for="cc_number" class="label">
+                        <span><!-- ko text: $t('Credit Card Number')--><!-- /ko --></span>
+                    </label>
+                    <div class="control">
+                        <input type="text"
+                               id="cc_number"
+                               name="payment[cc_number]"
+                               data-validate="{required:true}"
+                               data-bind='
+                                attr: {title: $t("Credit Card Number")},
+                                value: CreditCardNumber'
+                               class="input-text"/>
+                    </div>
+                </div>
+                 <div class="field field-number required">
+                    <label for="cc_exp" class="label">
+                        <span><!-- ko text: $t('Credit Card Expiry')--><!-- /ko --></span>
+                    </label>
+                    <div class="control">
+                        <input type="text"
+                               id="cc_exp"
+                               name="payment[cc_exp]"
+                               data-validate="{required:true}"
+                               data-bind='
+                                attr: {title: $t("Credit Card Expiry")},
+                                value: CreditCardExpiry'
+                               class="input-text"/>
+                    </div>
+                </div>
+                 <div class="field field-number required">
+                    <label for="cc_cvv" class="label">
+                        <span><!-- ko text: $t('CVV')--><!-- /ko --></span>
+                    </label>
+                    <div class="control">
+                        <input type="text"
+                               id="cc_cvv"
+                               name="payment[cc_cvv]"
+                               data-validate="{required:true}"
+                               data-bind='
+                                attr: {title: $t("CVV")},
+                                value: CreditCardCvv'
+                               class="input-text"/>
+                    </div>
+                </div>
+                <div class="checkout-agreements-block">
+                    <!-- ko foreach: $parent.getRegion('before-place-order') -->
+                        <!-- ko template: getTemplate() --><!-- /ko -->
+                    <!--/ko-->
+                </div>
+                <div class="actions-toolbar" id="review-buttons-container">
+                    <div class="primary">
+                        <button class="action primary checkout"
+                                type="submit"
+                                data-bind="
+                                click: placeOrder,
+                                attr: {title: $t('Place Order')},
+                                enable: (getCode() == isChecked()),
+                                css: {disabled: !isPlaceOrderActionAllowed()}
+                                "
+                                data-role="review-save">
+                            <span data-bind="text: $t('Place Order')"></span>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</div>
+        

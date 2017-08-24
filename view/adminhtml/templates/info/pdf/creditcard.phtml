@@ -1,0 +1,14 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php echo __('Name on Credit Card: %1', $block->escapeHtml($block->getInfo()->getCcName())) ?>
+    {{pdf_row_separator}}
+<?php echo __('Credit Card Number: %1', $block->escapeHtml($block->getInfo()->getCcNumber())) ?>
+    {{pdf_row_separator}}
+<?php echo __('Credit Card Expiry: %1', $block->escapeHtml($block->getInfo()->getCcExp())) ?>
+    {{pdf_row_separator}}
+<?php echo __('CVV: %1', $block->escapeHtml($block->getInfo()->getCcCvv())) ?>
+    {{pdf_row_separator}}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+            <creditcard>
+                <active>0</active>
+                <model>Ebizinfosys\OfflineCC\Model\Creditcard</model>
+                <order_status>pending</order_status>
+                <title>Credit Card Offline</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+            </creditcard>
+        </payment>
+    </default>
+</config>
